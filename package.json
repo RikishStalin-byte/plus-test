@@ -1,0 +1,29 @@
+{
+  "name": "plus-test",
+  "version": "1.0.0",
+  "description": "Day 8 demo update 🚀\r This is a test change for demo.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RikishStalin-byte/plus-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/RikishStalin-byte/plus-test/issues"
+  },
+  "homepage": "https://github.com/RikishStalin-byte/plus-test#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "next": "^16.3.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}
