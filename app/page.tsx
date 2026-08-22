@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 
+type PR = {
+  title: string;
+  summary: string;
+};
+
 export default function Home() {
-  const [prs, setPrs] = useState<{ title: string; summary: string }[]>([]);
+  const [prs, setPrs] = useState<PR[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/prs")
+   fetch("/api/prs")
       .then((res) => res.json())
       .then((data) => {
         setPrs(data);
@@ -31,7 +36,7 @@ export default function Home() {
         </p>
 
         <div className="rounded-xl bg-white p-6 shadow">
-          <h2 className="mb-4 text-2xl font-semibold">
+          <h2 className="mb-4 text-2xl font-semibold text-gray-900">
             Pull Requests
           </h2>
 
@@ -47,11 +52,12 @@ export default function Home() {
                   className="rounded-lg border p-4"
                 >
                   <h3 className="font-semibold text-gray-900">
-                   <div>
-  <h3 className="font-semibold text-gray-900">{pr.title}</h3>
-  <p className="mt-2 text-gray-600">{pr.summary}</p>
-</div>
+                    {pr.title}
                   </h3>
+
+                  <p className="mt-2 text-gray-600 whitespace-pre-line">
+                    {pr.summary}
+                  </p>
                 </div>
               ))}
             </div>
